@@ -2,62 +2,56 @@ package hw4;
 
 public class Square {
 
-	public enum Dest {
-		CA, NY, PA, MI, BLANK;
+	// public enum Dest {
+	// CA, NY, PA, MI, BLANK;
+	//
+	// static final String rep[] = { "C", "N", "P", "M", " " };
+	//
+	// @Override
+	// public String toString() {
+	// return rep[this.ordinal()];
+	// }
+	// }
+	//
+	// public enum Route {
+	// BLUE, GREEN, YELLOW, BLACK, GREY;
+	// // PINK, WHITE, ORANGE, RED;
+	// static final String repr[] = { "blue", "green", "yellow", "black", "grey" };
+	//
+	// @Override
+	// public String toString() {
+	// return repr[this.ordinal()];
+	// }
+	// }
 
-		static final String rep[] = { "C", "N", "P", "M", " " };
-
-		@Override
-		public String toString() {
-			return rep[this.ordinal()];
-		}
-	}
-
-	public enum Route {
-		BLUE, GREEN, YELLOW, BLACK, GREY;
-		// PINK, WHITE, ORANGE, RED;
-		static final String repr[] = { "blue", "green", "yellow", "black", "grey" };
+	public enum Symbol {
+		CA, NY, PA, MI, BLUE, GREEN, YELLOW, BLACK, GREY, BLANK;
+		static final String repr[] = { "C", "N", "P", "M", "blue", "grn", "yellow", "black", "grey", " " };
 
 		@Override
 		public String toString() {
 			return repr[this.ordinal()];
+
 		}
 	}
 
-	private Dest destValue;
-	private Route routeValue;
+	private Symbol value;
 
-	public Square() {
-		destValue = Dest.BLANK;
-		routeValue = Route.GREY;
+	public Square(Symbol _symbol) {
+		value = _symbol;
 	}
 
-	public Square(Dest _value) {
-		destValue = _value;
-	}
-
-	public Square(Route _value) {
-		routeValue = _value;
-	}
-
-	public boolean hasDest(Dest target) {
-		return destValue.equals(target);
-	}
-
-	public boolean hasRoute(Route target) {
-		return routeValue.equals(target);
+	public boolean hasSymbol(Symbol target) {
+		return value.equals(target);
 	}
 
 	public void markUsed() {
-		destValue = Dest.BLANK;
+		value = Symbol.BLANK;
 	}
 
 	@Override
 	public String toString() {
-		if (true)
-			return destValue.toString();
-		else
-			return routeValue.toString();
+		return value.toString();
 	}
 
 }

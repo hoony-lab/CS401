@@ -1,17 +1,16 @@
 package hw4;
 
-import hw4.Square.Dest;
+import hw4.Square.Symbol;
 
 public class CardDest {
 
-	Square square;
-	Dest dest;
+	Symbol dest;
 
-    CardDest(Dest _dest) {
+    CardDest(Symbol _dest) {
         dest = _dest;
     }
   
-    Dest getDest() {
+    Symbol getDest() {
         return dest;
     }
 	

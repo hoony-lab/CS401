@@ -45,11 +45,18 @@ public class Player {
 
 	@Override
 	public String toString() {
-		StringBuilder result = new StringBuilder(name);
+		StringBuilder result = new StringBuilder(name + "'s turn");
 		result.append('\n');
-		int cardIndex = 0;
+		int destCardIndex = 0, routeCardIndex = 0;
 		for (CardDest card : destOnHand) {
-			result.append(cardIndex++);
+			result.append(destCardIndex++);
+			result.append(". ");
+			result.append(card);
+			result.append("    ");
+		}
+		result.append('\n');
+		for (CardRoute card : routeOnHand) {
+			result.append(routeCardIndex++);
 			result.append(". ");
 			result.append(card);
 			result.append("    ");

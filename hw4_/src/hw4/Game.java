@@ -69,7 +69,7 @@ public class Game {
 	}
 
 	public boolean playCard(Player player) {
-		int cardToPlay;
+		int destCardToPlay, destCardToPlay2, routeCardToPlay;
 		String quit;
 		int r1, c1, r2, c2;
 
@@ -77,27 +77,30 @@ public class Game {
 		boolean successful = false;
 
 		while (tries > 0) {
-			// System.out.println(board);
+			System.out.println(board);
 			System.out.println(player);
-			System.out.print("Enter " + QUIT + " to quit, any other nonblank to continue: ");
+			System.out.print("Enter " + QUIT + " to quit,\n any other nonblank to continue: ");
 			quit = stdin.next().toUpperCase();
 
 			if (quit.equals(QUIT))
 				return false;
 
-			cardToPlay = getValidIndex(0, player.destOnHand.size());
-			System.out.print("Please pick row to place card: ");
+			destCardToPlay = getValidIndex(0, player.destOnHand.size());
+			destCardToPlay2 = getValidIndex(0, player.destOnHand.size());
+			routeCardToPlay = getValidIndex(0, player.routeOnHand.size());
+			System.out.print("Please pick FIRST row to place card: ");
 			r1 = stdin.nextInt();
-			System.out.print("Please pick column to place card: ");
+			System.out.print("Please pick FIRST column to place card: ");
 			c1 = stdin.nextInt();
-			System.out.print("Please pick row to place card: ");
+			System.out.print("Please pick SECOND row to place card: ");
 			r2 = stdin.nextInt();
-			System.out.print("Please pick column to place card: ");
+			System.out.print("Please pick SECOND column to place card: ");
 			c2 = stdin.nextInt();
 
-			if (board.placeDest(player.getDest(cardToPlay), player.getRoute(cardToPlay), r1, c1, r2, c2)) {
-				player.removeDest(cardToPlay);
-				player.removeRoute(cardToPlay);
+			if (board.placeDest(player.getDest(destCardToPlay), player.getDest(destCardToPlay2), player.getRoute(routeCardToPlay), r1, c1, r2, c2)) {
+				player.removeDest(destCardToPlay);
+				player.removeDest(destCardToPlay2);
+				player.removeRoute(routeCardToPlay);
 				return true;
 			}
 
@@ -112,7 +115,7 @@ public class Game {
 		boolean valid = false;
 
 		while (!valid) {
-			System.out.print("Please choose the index of the domino you wish to play: ");
+			System.out.print("Please choose the index of the destination you wish to play: ");
 			cardToPlay = stdin.nextInt();
 			valid = low <= cardToPlay && cardToPlay < high;
 		}

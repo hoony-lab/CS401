@@ -9,10 +9,10 @@ public class DestDeck {
 	List<CardDest> destDeck;
 
 	public DestDeck() {
-		Square.Dest[] dests = Square.Dest.values();
+		Square.Symbol[] dests = Square.Symbol.values();
 		destDeck = new ArrayList<>();
-		for (int destIndex1 = 0; destIndex1 < dests.length - 1; destIndex1++) {
-			for (int destIndex = 0; destIndex < dests.length - 1; destIndex++) {
+		for (int destIndex1 = 0; destIndex1 < dests.length - 6; destIndex1++) {
+			for (int destIndex = 0; destIndex < dests.length - 6; destIndex++) {
 				destDeck.add(new CardDest(dests[destIndex]));
 			}
 		}

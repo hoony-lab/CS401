@@ -9,10 +9,10 @@ public class RouteDeck {
 	List<CardRoute> routeDeck;
 
 	public RouteDeck() {
-		Square.Route[] routes = Square.Route.values();
+		Square.Symbol[] routes = Square.Symbol.values();
 		routeDeck = new ArrayList<>();
-		for (int routeIndex1 = 0; routeIndex1 < routes.length - 1; routeIndex1++) {
-			for (int routeIndex = 0; routeIndex < routes.length - 1; routeIndex++) {
+		for (int routeIndex1 = 3; routeIndex1 < routes.length - 1; routeIndex1++) {
+			for (int routeIndex = 3; routeIndex < routes.length - 1; routeIndex++) {
 				routeDeck.add(new CardRoute(routes[routeIndex]));
 			}
 		}

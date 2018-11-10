@@ -1,17 +1,16 @@
 package hw4;
 
-import hw4.Square.Route;
+import hw4.Square.Symbol;
 
 public class CardRoute {
 
-	Square square;
-	Route route;
+	Symbol route;
 
-    CardRoute(Route _route) {
+    CardRoute(Symbol _route) {
     	route = _route;
     }
   
-    Route getRoute() {
+    Symbol getRoute() {
         return route;
     }
 	
