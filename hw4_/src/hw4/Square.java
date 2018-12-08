@@ -25,8 +25,8 @@ public class Square {
 	// }
 
 	public enum Symbol {
-		CA, NY, PA, MI, BLUE, GREEN, YELLOW, BLACK, GREY, BLANK;
-		static final String repr[] = { "C", "N", "P", "M", "blue", "grn", "yellow", "black", "grey", " " };
+		CP, MW, TS, UN, BLUE, GREEN, YELLOW, BLACK, GREY, BLANK;
+		static final String repr[] = { "Central Park", "Midtown West", "Time Square", "United Nations", "blue", "grn", "yellow", "black", "grey", " " };
 
 		@Override
 		public String toString() {

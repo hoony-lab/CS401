@@ -17,12 +17,12 @@ public class Board {
 	// Square(Route.BLACK), new Square(Dest.NY) }, };
 
 	private final Square[][] board = {
-			{ new Square(Symbol.CA), new Square(Symbol.BLUE), new Square(Symbol.BLUE), new Square(Symbol.BLUE),
-					new Square(Symbol.MI) },
+			{ new Square(Symbol.CP), new Square(Symbol.BLUE), new Square(Symbol.BLUE), new Square(Symbol.BLUE),
+					new Square(Symbol.MW) },
 			{ new Square(Symbol.GREEN), BLANK, BLANK, BLANK, new Square(Symbol.GREY) },
 			{ new Square(Symbol.GREEN), BLANK, BLANK, BLANK, new Square(Symbol.GREY) },
-			{ new Square(Symbol.PA), new Square(Symbol.BLACK), new Square(Symbol.BLACK), new Square(Symbol.BLACK),
-					new Square(Symbol.NY) }, };
+			{ new Square(Symbol.TS), new Square(Symbol.BLACK), new Square(Symbol.BLACK), new Square(Symbol.BLACK),
+					new Square(Symbol.UN) }, };
 
 	private static final String TOPGUIDE = "   0\t1\t2\t3\t4\n   __________________________________\n";
  
